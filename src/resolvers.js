@@ -8,4 +8,11 @@ export const resolvers = {
     },
     tasks: () => tasks,
   },
+  Mutation: {
+    createTask: (_, { input }) => {
+      input._id = tasks.length;
+      tasks.push(input);
+      return input;
+    },
+  },
 };
