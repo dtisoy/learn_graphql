@@ -3,7 +3,8 @@ import { tasks } from "./sample";
 export const resolvers = {
   Query: {
     hello: () => "hello world with graphql",
-    greet: (root, { name }) => {
+    greet: (root, { name }, context) => {
+        console.log(context)
       return `Hello ${name} :)`;
     },
     tasks: () => tasks,
